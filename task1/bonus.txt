@@ -1,0 +1,9 @@
+Смена пароля потерянного рута:
+гасим вм
+virsh shutdown mkdev-vm-1
+меняем пасс рута
+virt-customize -a /var/lib/libvirt/images/mkdev-vm-1.qcow2 --root-password password:ololo17
+где mkdev-vm-1.qcow2 имя образа (можно выяснить из virsh dumpxml mkdev-vm-100500 | grep qcow
+
+ololo17 - новый пароль от акка root
+virsh start mkdev-vm-1
